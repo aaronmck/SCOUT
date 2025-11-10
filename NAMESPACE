@@ -1,0 +1,12 @@
+export(prepare_data)
+export(fitModel)
+export(get_fit_metrics)
+export(processes_results)
+export(annot_results)
+export(calc_accuracy)
+export(return_model)
+export(normalize)
+export(LT.smooth.all)
+export(log_message)
+export(add_new_column)
+# ... export other needed functions

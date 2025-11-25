@@ -4,7 +4,16 @@
 \alias{fitModel}
 \title{Fit OUwie models in parallel}
 \usage{
-fitModel(inputs, cores = 1, write = TRUE, outpath = NULL, prefix = "OUWIE")
+fitModel(
+  inputs,
+  cores = 1,
+  write = TRUE,
+  outpath = NULL,
+  prefix = "OUWIE",
+  logfile = NULL,
+  testgenes = NULL,
+  testregimes = NULL
+)
 }
 \arguments{
 \item{inputs}{List generated from prepare_data()}
@@ -16,6 +25,10 @@ fitModel(inputs, cores = 1, write = TRUE, outpath = NULL, prefix = "OUWIE")
 \item{outpath}{Directory for output files}
 
 \item{prefix}{File prefix}
+
+\item{testgenes}{If genes of interest is a subset of the full gene columns list, provide a list of genes to test.}
+
+\item{testregimes}{If regimes of interest is a subset of the full regime list, provide a list of regimes to test.}
 }
 \value{
 Data frame of combined model summaries

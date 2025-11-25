@@ -4,7 +4,7 @@
 \alias{log_message}
 \title{Log messages to a file and print optionally}
 \usage{
-log_message(message, log_file, verbose = FALSE)
+log_message(message, log_file = NULL, verbose = FALSE)
 }
 \arguments{
 \item{message}{Text to write}

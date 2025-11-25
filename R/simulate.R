@@ -4,6 +4,8 @@
 #' @param tree Newick string describing cell state tree. Controls how many final states are simulated.
 #' @param outdir Path to output directory
 #' @param out_prefix Prefix for saving files. 
+#' @import TedSim
+#' @import ape
 #' @return List of results. The same set are also saved to outdir. 
 #' @export
 simulate_lineage <- function(ngenes, ncells, tree, outdir, out_prefix){
@@ -54,8 +56,10 @@ simulate_lineage <- function(ngenes, ncells, tree, outdir, out_prefix){
     tree_gt_dir <- paste0(make_path, '_newick.nwk')
     internal_dir <- paste0(make_path, '_internal_node_annot.csv')
 
+    states_leaves <- as.data.frame(states_leaves)
+    states_leaves$nodeID <- paste0('t', states_leaves$cellID)
 
-    write.tree(cifs[[4]], tree_gt_dir)
+    ape::write.tree(cifs[[4]], tree_gt_dir)
     write.csv(observed_counts[[1]], gene_expression_dir, row.names = FALSE)
     write.csv(states_leaves, cell_meta_dir)
     write.table(muts_leaves, character_matrix_dir)
@@ -75,6 +79,7 @@ generate_thetas <- function(x, nstats, step) {
   seq(from = start, by = step, length.out = nstats)
 }
 
+#'@import OUwie
 generate_EvoEVFs <- function(real_tree, metadata, nevfs, a, s, t0, theta_step, n_states){
 	oum_thetas <- generate_thetas(t0, n_states, theta_step)
 

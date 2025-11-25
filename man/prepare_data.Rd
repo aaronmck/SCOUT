@@ -20,7 +20,8 @@ prepare_data(
   floor = 0,
   blacklist = NULL,
   troubleshoot = FALSE,
-  write_smooth = FALSE
+  write_smooth = FALSE,
+  logfile = NULL
 )
 }
 \arguments{

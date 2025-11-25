@@ -4,15 +4,7 @@
 \alias{processes_results}
 \title{Process results to pick winners based on delta AICc thresholds}
 \usage{
-processes_results(
-  i,
-  d = 2,
-  adir = NULL,
-  calc_delta = FALSE,
-  exclude = NULL,
-  read = TRUE,
-  filepath = NULL
-)
+processes_results(i, d = 2, ac = 0.1)
 }
 \description{
 Process results to pick winners based on delta AICc thresholds
